@@ -62,7 +62,7 @@ class AuthClass {
   }
 
   Future<UserCredential> signInWithFacebook() async {
-    final AccessToken result = await FacebookAuth.instance.login();
+    final AccessToken result = (await FacebookAuth.instance.login()) as AccessToken;
 
     final FacebookAuthCredential facebookAuthCredential =
         FacebookAuthProvider.credential(result.token);
